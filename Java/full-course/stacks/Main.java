@@ -19,7 +19,11 @@ public class Main{
         // peeking at the top of stack ---> expecting to see "Robin"
         String peek_val = stack.peek();
         System.out.println("Peeking(top of stack) at: " + peek_val);
-        
+
+        // popping val from top of stack and seeing val on top by peeking 
+        stack.pop(); // should pop "Robin"
+        System.out.println("Val on top post pop(): " + stack.peek());
+
         }
     public static void check_empty(Stack<String> stack_instance)
     {
