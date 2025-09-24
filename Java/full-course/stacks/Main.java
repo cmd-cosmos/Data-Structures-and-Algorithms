@@ -34,7 +34,17 @@ public class Main{
         String search_val_2 = "Alfred";
         System.err.println("Searching for Alfred object on the stack...");
         get_size(stack);
-        System.out.println("Object found at Index: " + (stack.size() - stack.search(search_val_2)));
+        System.out.println("Object found at Index: " + (stack.size() - stack.search(search_val_2)) + '\n');
+
+        Stack<String> stack_characters = new Stack<String>();
+        stack_characters.push("Batman");
+        stack_characters.push("Alfred");
+        stack_characters.push("Joker");
+        stack_characters.push("Riddler");
+        stack_characters.push("2 Face");
+        stack_characters.push("Scarecrow");
+        System.out.println("Size of character stack: " + stack_characters.size());
+        System.out.println("character stack: " + stack_characters);
 
         }
     public static void check_empty(Stack<String> stack_instance)
