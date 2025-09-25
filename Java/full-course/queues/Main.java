@@ -21,6 +21,21 @@ public class Main{
         queue.poll();
         System.out.println(queue);
 
+        Queue<String> characters = new LinkedList<>();
+        characters.offer("Batman");
+        characters.offer("Alfred");
+        characters.offer("Joker");
+        characters.offer("Scarecrow");
+
+        System.out.println(characters);
+
+        characters.poll();
+        characters.poll();
+
+        System.out.println("After Dequeing 2 elements: " + characters);
+        String peeking = characters.peek();
+        System.out.println("peeking at front of queue: " + peeking);
+
 
     }
 }
