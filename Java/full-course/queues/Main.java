@@ -36,6 +36,11 @@ public class Main{
         String peeking = characters.peek();
         System.out.println("peeking at front of queue: " + peeking);
 
+        System.out.println("Empty flag: " + characters.isEmpty());
+        System.out.println("queue size: " + characters.size());
+        System.out.println("Search flag(Joker): " + characters.contains("Joker"));
+        System.out.println("Search flag(Batman): " + characters.contains("Batman"));
+
 
     }
 }
