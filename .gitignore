@@ -9,3 +9,7 @@ hs_err_pid*
 replay_pid*
 
 .vscode/
+
+*.pyc
+*.pyo
+__pycache__/
