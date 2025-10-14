@@ -13,3 +13,5 @@ replay_pid*
 *.pyc
 *.pyo
 __pycache__/
+
+**.exe
