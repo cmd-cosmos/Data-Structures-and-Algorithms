@@ -4,8 +4,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node node_t;
-typedef struct doublyLL doublyLL_t;
+typedef struct node
+{
+    int data;
+    struct node* prev;
+    struct node* next;
+} node_t;
+
+typedef struct doublyLL
+{
+    node_t* head;
+    node_t* tail;
+}doublyLL_t;
 
 int initList(doublyLL_t* list, int count, ...);
 
