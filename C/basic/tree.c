@@ -5,6 +5,9 @@ target tee:
       2   3
      / \   
     4   5
+
+    preorder --> 1,2,4,5,3
+    inroder  --> 4,2,5,1,3
 */
 
 #include <stdio.h>
@@ -28,6 +31,7 @@ node_t* new_Node(int val)
 }
 
 void preorder_traverse(node_t* root)
+// root, left, right
 {
     if (root == NULL)
     {
@@ -36,6 +40,19 @@ void preorder_traverse(node_t* root)
     printf("%d -> ", root->value);
     preorder_traverse(root->left_child);
     preorder_traverse(root->right_child);
+}
+
+void inorder_traversal(node_t* root)
+// left, root, right
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    inorder_traversal(root->left_child);
+    printf("%d ->" , root->value);
+    inorder_traversal(root->right_child);
 }
 
 
@@ -49,6 +66,9 @@ int main()
 
     printf("preorder traversal: ");
     preorder_traverse(root);
+    printf("\n");
+    printf("inorder traversak: ");
+    inorder_traversal(root);
 
     return 0;
 }
