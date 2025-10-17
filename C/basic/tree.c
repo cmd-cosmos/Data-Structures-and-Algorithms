@@ -6,8 +6,9 @@ target tee:
      / \   
     4   5
 
-    preorder --> 1,2,4,5,3
-    inroder  --> 4,2,5,1,3
+    preorder  --> 1,2,4,5,3
+    inroder   --> 4,2,5,1,3
+    postorder --> 4,5,2,3,1
 */
 
 #include <stdio.h>
@@ -55,6 +56,18 @@ void inorder_traversal(node_t* root)
     inorder_traversal(root->right_child);
 }
 
+void postorder_traversal(node_t* root)
+// left, right, root
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    postorder_traversal(root->left_child);
+    postorder_traversal(root->right_child);
+    printf("%d -> ", root->value);
+}
 
 int main()
 {
@@ -69,6 +82,10 @@ int main()
     printf("\n");
     printf("inorder traversak: ");
     inorder_traversal(root);
+    printf("\n");
+    printf("postorder traversak: ");
+    postorder_traversal(root);
+
 
     return 0;
 }
