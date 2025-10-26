@@ -1,6 +1,6 @@
 # implementing a heap
 #pylint: skip-file
-
+# heaps --> useful for implementing priority queues and faster than trees in some applications
 # min heap implementation
 
 from typing import Optional
@@ -77,5 +77,3 @@ nodeArr = [10, 20, 100, 70, 80, 90]
 minHeap = MinHeap(nodes=nodeArr)
 print(minHeap)
 print("is-empty flag: ", minHeap.isEmpty())
-
-
