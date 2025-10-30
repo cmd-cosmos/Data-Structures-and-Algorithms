@@ -50,6 +50,31 @@ void preOrder(node_t* root)
     
 }
 
+void inOrder(node_t* root)
+// left -> node -> right
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    inOrder(root->left);
+    printf("%d -> ", root->val);
+    inOrder(root->right);
+}
+
+void postOrder(node_t* root)
+// left -> right -> node
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    postOrder(root->left);
+    postOrder(root->right);
+    printf("%d -> ", root->val);
+}
 
 int main()
 {
@@ -73,6 +98,15 @@ int main()
 
     printf("pre order traversal: ");
     preOrder(rootNode);
+    printf("\n");
+
+    printf("in order traversal: ");
+    inOrder(rootNode);
+    printf("\n");
+
+    printf("post order traversal: ");
+    postOrder(rootNode);
+    printf("\n");
 
     return 0;
 }
