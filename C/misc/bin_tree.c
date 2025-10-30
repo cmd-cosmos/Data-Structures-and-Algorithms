@@ -37,15 +37,37 @@ node_t* recursiveInsert(node_t* root, node_t* newNode)
     return root;
 }
 
+void preOrder(node_t* root)
+// node -> left -> right
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    printf("%d -> ", root->val);
+    preOrder(root->left);
+    preOrder(root->right);
+    
+}
+
 
 int main()
 {
-    node_t* rootNode = newNode(10);
+    node_t* rootNode = newNode(30);
     node_t* a = newNode(10);
     node_t* b = newNode(20);
-    node_t* c = newNode(30);
+    node_t* c = newNode(90);
     node_t* d = newNode(40);
     node_t* e = newNode(50);
+
+    rootNode = recursiveInsert(rootNode, a);
+    rootNode = recursiveInsert(rootNode, b);
+    rootNode = recursiveInsert(rootNode, c);
+    rootNode = recursiveInsert(rootNode, d);
+    rootNode = recursiveInsert(rootNode, e);
+
+    printf("pre order traversal: ");
+    preOrder(rootNode);
 
     return 0;
 }
