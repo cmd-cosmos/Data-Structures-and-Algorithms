@@ -20,19 +20,19 @@ node_t* newNode(int data)
     return newNode;
 }
 
-node_t* recursiveInsert(node_t* root, node_t* newNode)
+node_t* recursiveInsert(node_t* root, int val)
 {
     if (root == NULL)
     {
-        return newNode;
+        return newNode(val);
     }
-    if (newNode->val <= root->val)
+    if (val <= root->val)
     {
-        root->left = recursiveInsert(root->left, newNode);
+        root->left = recursiveInsert(root->left, val);
     }
     else
     {
-        root->right = recursiveInsert(root->right, newNode);
+        root->right = recursiveInsert(root->right, val);
     }
     return root;
 }
@@ -53,18 +53,23 @@ void preOrder(node_t* root)
 
 int main()
 {
-    node_t* rootNode = newNode(30);
-    node_t* a = newNode(10);
-    node_t* b = newNode(20);
-    node_t* c = newNode(90);
-    node_t* d = newNode(40);
-    node_t* e = newNode(50);
+    node_t* rootNode = NULL;
 
-    rootNode = recursiveInsert(rootNode, a);
-    rootNode = recursiveInsert(rootNode, b);
-    rootNode = recursiveInsert(rootNode, c);
-    rootNode = recursiveInsert(rootNode, d);
-    rootNode = recursiveInsert(rootNode, e);
+    rootNode = recursiveInsert(rootNode, 30);
+    rootNode = recursiveInsert(rootNode, 10);
+    rootNode = recursiveInsert(rootNode, 20);
+    rootNode = recursiveInsert(rootNode, 5);
+    rootNode = recursiveInsert(rootNode, 50);
+    rootNode = recursiveInsert(rootNode, 40);
+    rootNode = recursiveInsert(rootNode, 90);
+
+/*
+        30
+      /   \
+     10    50
+    /\     / \
+   5  20  40  90
+*/
 
     printf("pre order traversal: ");
     preOrder(rootNode);
