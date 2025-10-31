@@ -24,6 +24,18 @@ class Graph:
         self.graph[n1].append(n2)
         self.graph[n2].append(n1)
 
+    def delete_node(self, node):
+        if node in self.graph:
+            for neighbors in list(self.graph[node]):
+                self.graph[neighbors].remove(node)
+            del self.graph[node]
+    
+    def delete_edge(self, n1, n2):
+        if n1 in self.graph and n2 in self.graph[n1]:
+            self.graph[n1].remove(n2)
+        if n2 in self.graph and n1 in self.graph[n2]:
+            self.graph[n2].remove(n1)
+
     def display(self):
         for node, neighbors in self.graph.items():
             print(f"{node} : {neighbors}")
@@ -40,3 +52,15 @@ graph.add_edge(2, 4)
 graph.add_edge(3, 4)
 
 graph.display()
+
+graph.delete_node(1)
+graph.delete_edge(2,4)
+
+graph.display()
+
+not_connected_graph = Graph()
+not_connected_graph.add_nodes(10)
+not_connected_graph.add_nodes(22)
+not_connected_graph.add_nodes(31)
+
+not_connected_graph.display()
