@@ -26,6 +26,16 @@ class LinkedList:
             curr = curr.next
         print("None")
 
+    def insertAtHead(self, data):
+        newNode = Node(data)
+        if self.head is None:
+            self.head = newNode
+            return
+        temp = self.head
+        self.head = newNode
+        newNode.next = temp
+
+
 ll = LinkedList()
 
 ll.append(1)
@@ -34,5 +44,9 @@ ll.append(3)
 ll.append(4)
 
 ll.printLL()   
+
+ll.insertAtHead(200)
+
+ll.printLL()
 
 
