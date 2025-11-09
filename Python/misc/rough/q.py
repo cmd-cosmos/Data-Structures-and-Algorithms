@@ -6,6 +6,8 @@
 # <block 1> --- <block 2> ... --> blocks are arrays 
 # linked list of arrays
 # combines best of both worlds --> cache locality of arrays and quick inserts and pops of linked lists 
+# dequeue ops like append and popleft are atomic
+# safe for multithreaded producer consumer patterns
 
 from collections import deque
 
