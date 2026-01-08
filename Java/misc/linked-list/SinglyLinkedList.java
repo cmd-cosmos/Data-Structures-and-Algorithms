@@ -8,4 +8,13 @@ public class SinglyLinkedList<T> {
     public SinglyLinkedList() {
         // empty
     }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
 }
