@@ -18,5 +18,12 @@ int size();
 
 int main(void)
 {
+    bool x = isEmpty();
+    printf("%i",x);
     return 0;
+}
+
+bool isEmpty()
+{
+    return count == 0;
 }
