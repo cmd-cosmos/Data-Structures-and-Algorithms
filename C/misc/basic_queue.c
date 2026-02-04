@@ -19,11 +19,20 @@ int size();
 int main(void)
 {
     bool x = isEmpty();
-    printf("%i",x);
+    printf("isEmpty: %i\n",x);
+    
+    bool y = isFull();
+    printf("isFull: %i\n",y);
+
     return 0;
 }
 
 bool isEmpty()
 {
     return count == 0;
+}
+
+bool isFull()
+{
+    return count == MAX_ELEMENTS;
 }
