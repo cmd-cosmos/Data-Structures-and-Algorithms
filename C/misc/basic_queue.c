@@ -23,6 +23,11 @@ int main(void)
     bool y = isFull();
     printf("isFull: %i\n",y);
 
+    enqueue(1);
+    enqueue(2);
+    enqueue(3);
+    printf("isEmpty: %d", isEmpty());
+
     return 0;
 }
 
@@ -49,6 +54,7 @@ bool enqueue(int data)
             front = 0;
         }
         rear++;
+        count++;
         intQueue[rear] = data;
         printf("%d added to queue.\n", data);
     }
