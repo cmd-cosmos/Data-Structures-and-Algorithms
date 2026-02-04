@@ -26,7 +26,14 @@ int main(void)
     enqueue(1);
     enqueue(2);
     enqueue(3);
-    printf("isEmpty: %d", isEmpty());
+    printf("isEmpty: %d\n", isEmpty());
+
+    dequeue();
+    dequeue();
+    dequeue();
+    printf("isEmpty: %d\n", isEmpty());
+
+    dequeue();
 
     return 0;
 }
@@ -46,6 +53,7 @@ bool enqueue(int data)
     if (rear == MAX_ELEMENTS - 1)
     {
         puts("Overflow Detected");
+        return 1;
     }
     else
     {
@@ -57,5 +65,20 @@ bool enqueue(int data)
         count++;
         intQueue[rear] = data;
         printf("%d added to queue.\n", data);
+    }
+}
+
+bool dequeue()
+{
+    if (front == -1 || front > rear)
+    {
+        puts("Underflow Detected");
+        return 1;
+    }
+    else
+    {
+        printf("deleted: %d\n", intQueue[front]);
+        front++;
+        count--;
     }
 }
